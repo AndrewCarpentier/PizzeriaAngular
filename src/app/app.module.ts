@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { ListPizzaComponent } from './list-pizza/list-pizza.component';
 import { PizzaComponent } from './pizza/pizza.component';

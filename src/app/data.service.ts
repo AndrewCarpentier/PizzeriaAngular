@@ -10,7 +10,7 @@ export class DataService {
   constructor() { }
 
   addPizzaCommand(pizza) {
-let find=false;
+    let find=false;
     for (let p of this.pizzasCommand) {
       if (pizza.id == p.id) {
         p.nb++

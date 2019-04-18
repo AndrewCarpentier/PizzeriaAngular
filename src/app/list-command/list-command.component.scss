@@ -2,13 +2,16 @@
 
 div.row{
     @include backgroundColor;
-    height: 50%;
     width: 100%;
     top: 30%;
     padding: 0.8rem;
-    div.command{
-        cursor: pointer;
-    }
+    margin-left: 0;
+}
+
+.coupure{
+    border-bottom: 1.5px solid $white;
+    cursor: pointer;
+
 }
 
 .close{

@@ -3,10 +3,18 @@
     <i class="fas fa-times"></i>
 </div>
 
-<div *ngFor="let command of commands" class="row">
+<div *ngFor="let command of commands" class="row coupure">
 
-  <div class="command col-8">
+  <div class="command col-md-8">
     {{ command.number }} - {{ command.client.lastname }} {{ command.client.firstname }}
   </div>
 
+  <div class="col-md-4">
+    <div *ngIf="command.payed; else elseBlock">
+      Payer
+    </div>
+    <ng-template #elseBlock>
+      Pas payer
+    </ng-template>
+  </div>
 </div>

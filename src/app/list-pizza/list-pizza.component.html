@@ -24,7 +24,7 @@
     <app-list-command (closePopUp)="display()"></app-list-command>
   </div>
 
-  <div class="list-command" (click)="display()">
+  <div class="list-command"  [ngClass]="displayCommands ? 'list-command-click' : ''" (click)="display()">
     Liste des commandes
   </div>
 

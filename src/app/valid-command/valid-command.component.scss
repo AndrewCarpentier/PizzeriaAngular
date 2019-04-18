@@ -10,7 +10,7 @@ form{
 
     .primary-btn{
         @include backgroundColor;
-
+        border: 1.5px solid $white;
         border-radius: 0.3125rem;
     }
 

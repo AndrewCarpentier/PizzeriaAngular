@@ -58,6 +58,12 @@ footer{
     top: 30%;
     cursor: pointer;
     text-orientation: initial;
+    z-index: 9999;
+    border: 2px solid transparent;
+}
+
+.list-command-click{
+    border: 2px solid $white;
 }
 
 .pop-up{
@@ -65,10 +71,11 @@ footer{
 }
 
 .app-list-command{
-    position: absolute;
+    position: fixed;
     right: -15px;
     height: 100%;
     top: 0;
     z-index: 9999;
     opacity: 0.9;
+    background-color: $primary;
 }
