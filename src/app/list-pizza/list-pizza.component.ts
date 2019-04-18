@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-list-pizza',
@@ -19,7 +20,9 @@ export class ListPizzaComponent implements OnInit {
   validCommand = false;
   displayCommands = false;
   
-  constructor() { }
+  constructor(private service : DataService) { 
+    this.service.commands = this.service.getCommands();
+  }
 
   ngOnInit() {
   }
