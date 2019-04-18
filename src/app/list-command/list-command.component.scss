@@ -1,0 +1,21 @@
+@import '../../styles';
+
+div.row{
+    height: 25%;
+    width: 100%;
+    top: 30%;
+    background-color: $primary;
+    padding: 0.8rem;
+    color: $secondary;
+    
+    div.command{
+        cursor: pointer;
+    }
+}
+
+div.close{
+    color: $secondary;
+    position: absolute;
+    margin-left: 700px;
+    cursor: pointer;
+}

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PizzaComponent } from '../pizza/pizza.component';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-list-pizza',
@@ -18,6 +16,9 @@ export class ListPizzaComponent implements OnInit {
   displayAlert = false;
 
   pizzaName;
+  validCommand = false;
+  displayCommands = false;
+  
   constructor() { }
 
   ngOnInit() {
@@ -29,6 +30,14 @@ export class ListPizzaComponent implements OnInit {
     setTimeout(() => {
       this.displayAlert = false;
     }, 1000);
+  }
+
+  validate = ()=>{
+    this.validCommand = !this.validCommand;
+  }
+
+  display = ()=>{
+    this.displayCommands = !this.displayCommands;
   }
 
 }

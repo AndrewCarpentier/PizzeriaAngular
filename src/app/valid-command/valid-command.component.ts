@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-valid-command',
@@ -9,8 +10,9 @@ import { FormBuilder } from '@angular/forms';
 export class ValidCommandComponent implements OnInit {
 
   clientForm;
+  @Output() closePopUp = new EventEmitter<any>();
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private service: DataService) { }
 
   ngOnInit() {
     this.clientForm = this.fb.group({
@@ -20,7 +22,8 @@ export class ValidCommandComponent implements OnInit {
   }
 
   endCommand(){
-    console.log(this.clientForm.value)
+    this.service.endCommand(this.clientForm.value);
+    this.closePopUp.emit();
   }
 
 }

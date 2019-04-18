@@ -1,3 +1,5 @@
+@import '../../styles.scss';
+
 .card-deck
 {
     justify-content: center;
@@ -8,17 +10,15 @@
 {
     height: 80px;
     width: 100%;
-    background-color: rgb(241, 97, 71);
+    background-color: $primary;
     text-align: center;
-   
-
 }
 
 .title h1
 {
     padding-top: 20px;
     font-weight: bolder;
-    color:white;
+    color:$secondary;
     
 }
 
@@ -34,5 +34,39 @@
 {
     text-align: center;
     font-size: 18px;
+}
   
+@import '../../styles.scss';
+
+
+
+footer{
+    background-color: $primary;
+    text-align: center;
+    color: $secondary;
+    font-size: 1.875rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.opacity{
+    opacity: 0.6;
+}
+
+.list-command{
+    background-color: $primary;
+    color: $secondary;
+    position: absolute;
+    padding: 0.5rem;
+    right: 0;
+    writing-mode: vertical-lr;
+    top: 30%;
+    cursor: pointer;
+    text-orientation: initial;
+}
+
+.pop-up{
+    width: 50%;
 }

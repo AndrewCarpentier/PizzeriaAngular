@@ -1,15 +1,33 @@
-<div class="title"> <h1>Pizza management interface</h1></div>
+<div class="title">
+  <h1>Pizza management interface</h1>
+</div>
 
 <div *ngIf="displayAlert">
   <div class="alert alert-success" role="alert">
-   <p>Pizza {{pizzaName}} validée avec succès !</p>
-  </div>
-</div>
-<div class="card-deck">
-  <div *ngFor="let pizza of pizzas" >
-
-    <app-pizza [pizzaIn]="pizza" (alert)="alertDisplay($event)"></app-pizza>
-  
+    <p>Pizza {{pizzaName}} validée avec succès !</p>
   </div>
 </div>
 
+  <div class="card-deck" [ngClass]="validCommand || displayCommands ? 'opacity' : ''">
+    <div *ngFor="let pizza of pizzas">
+
+      <app-pizza [pizzaIn]="pizza" (alert)="alertDisplay($event)"></app-pizza>
+
+    </div>
+  </div>
+
+  <div *ngIf="validCommand" class="pop-up container">
+    <app-valid-command (closePopUp)="validate()"></app-valid-command>
+  </div>
+
+  <div *ngIf="displayCommands" class="pop-up container">
+    <app-list-command (closePopUp)="display()"></app-list-command>
+  </div>
+
+  <div class="list-command" (click)="display()">
+    Liste des commandes
+  </div>
+
+  <footer (click)="validate()">
+    Valider la commande
+  </footer>

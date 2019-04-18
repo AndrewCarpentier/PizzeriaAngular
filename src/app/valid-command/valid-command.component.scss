@@ -1,0 +1,20 @@
+@import '../../styles';
+
+form{
+    height: 10rem;
+    width: 50%;
+    position: absolute;
+    top: 30%;
+    background-color: $primary;
+    padding: 0.8rem;
+
+    .primary-btn{
+        background-color: $secondary;
+        color: $primary;
+        border-radius: 0.3125rem;
+    }
+
+    input{
+        margin-bottom: 0.625rem;
+    }
+}

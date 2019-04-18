@@ -1,7 +1,13 @@
-<form [formGroup]="clientForm" (ngSubmit)="endCommand()">
+<form [formGroup]="clientForm" (ngSubmit)="endCommand()" class="form-group">
 
-    <input type="text" formControlName="firstname" placeholder="Prénom">
-    <input type="text" formControlName="lastname" placeholder="Nom">
+  <div>
+    <input class="form-control" type="text" formControlName="firstname" placeholder="Prénom">
+  </div>
+  <div>
+    <input class="form-control" type="text" formControlName="lastname" placeholder="Nom">
+  </div>
+  <div>
+    <button class="btn primary-btn" type="submit">Valider</button>
+  </div>
 
-  <button type="submit">Valider</button>
 </form>

@@ -1,5 +1,12 @@
-<div *ngFor="let command of commands">
- 
-  {{ command.numero }}
+
+<div class="close" (click)="close()">
+    <i class="fas fa-times"></i>
+</div>
+
+<div *ngFor="let command of commands" class="row">
+
+  <div class="command col-8">
+    {{ command.number }} - {{ command.client.lastname }} {{ command.client.firstname }}
+  </div>
 
 </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-list-command',
@@ -7,11 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCommandComponent implements OnInit {
 
-  commands = [{numero:1, pizzas: [{id:1, name: 'test', description: 'test', price: '5', img: ''}], client: {firstname: 'prenom', lastname: 'nom'}}];
+  commands;
+  @Output() closePopUp = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(private service : DataService) { 
+    this.commands = this.service.getCommands();
+  }
 
   ngOnInit() {
+
+  }
+
+  close = ()=>{
+    this.closePopUp.emit();
   }
 
 }
