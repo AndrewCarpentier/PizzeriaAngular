@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-valid-command',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ValidCommandComponent implements OnInit {
 
-  constructor() { }
+  clientForm;
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.clientForm = this.fb.group({
+      firstname: [],
+      lastname: []
+    });
+  }
+
+  endCommand(){
+    console.log(this.clientForm.value)
   }
 
 }

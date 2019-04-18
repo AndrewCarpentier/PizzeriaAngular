@@ -1,3 +1,10 @@
-<p>
-  detail-command works!
-</p>
+{{command.id}}
+
+<div *ngFor="let pizza of command.pizzas">
+    <app-pizza [pizzaIn]="pizza"></app-pizza>
+</div>
+
+<div>
+  {{command.client.firstname}}
+  {{command.client.lastname}}
+</div>

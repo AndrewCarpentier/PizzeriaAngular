@@ -1,3 +1,7 @@
-<p>
-  valid-command works!
-</p>
+<form [formGroup]="clientForm" (ngSubmit)="endCommand()">
+
+    <input type="text" formControlName="firstname" placeholder="Prénom">
+    <input type="text" formControlName="lastname" placeholder="Nom">
+
+  <button type="submit">Valider</button>
+</form>
