@@ -69,3 +69,12 @@ footer{
 .pop-up{
     width: 50%;
 }
+
+.app-list-command{
+    position: absolute;
+    right: -15px;
+    height: 100%;
+    top: 0;
+    z-index: 9999;
+    opacity: 0.9;
+}
