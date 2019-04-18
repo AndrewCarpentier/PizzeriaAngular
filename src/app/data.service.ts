@@ -9,7 +9,6 @@ export class DataService {
   constructor() { }
 
   addPizzaCommand(pizza) {
-    console.log(pizza);
 let find=false;
     for (let p of this.pizzasCommand) {
       if (pizza.id == p.id) {
@@ -22,11 +21,6 @@ let find=false;
 
       this.pizzasCommand.push({ ...pizza, nb: 1 });
     }
-    
-    console.log(this.pizzasCommand);
-
-
-
   }
 
 }

@@ -24,7 +24,6 @@ export class ListPizzaComponent implements OnInit {
   }
 
   alertDisplay = (pizza)=>{
-    console.log(pizza)
     this.pizzaName = pizza.name;
     this.displayAlert = true;
     setTimeout(() => {
