@@ -1,3 +1,7 @@
-<p>
-  list-pizza works!
-</p>
+<div class="card-deck">
+  <div *ngFor="let pizza of pizzas" >
+
+    <app-pizza [pizzaIn]="pizza"></app-pizza>
+  
+  </div>
+</div>
