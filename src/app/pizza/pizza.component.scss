@@ -1,3 +1,5 @@
+@import '../../styles.scss';
+
 .card :hover {
   cursor: pointer;
 }
@@ -5,7 +7,7 @@
 .card {
   margin-top: 30px;
   justify-content: center;
-  border: solid rgb(241, 97, 71) 2px;
+  border: solid $primary 2px;
 }
 
 .card-title {
@@ -17,17 +19,17 @@
 }
 
 .add {
-  position: absolute;
-  background: gray;
+  background-color: $secondary;
   width: 100%;
   height: 100%;
   opacity: 0.7;
+  position: absolute;
   
   i {
     font-size: 151px;
     margin-top: 64px;
     margin-left: 76px;
-    color: white;
+    color: $primary;
     opacity: 0.8;
   }
 }

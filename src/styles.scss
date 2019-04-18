@@ -9,5 +9,11 @@ html {
     padding: 0;
   }
 
-$primary : rgb(241, 97, 71);;
-$secondary : white;
+$primary : rgb(241, 97, 71);
+$secondary : gray;
+$white : white;
+
+@mixin backgroundColor {
+    background-color: $primary;
+    color: $white;
+}

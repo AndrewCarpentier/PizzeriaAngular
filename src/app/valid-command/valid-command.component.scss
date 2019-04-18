@@ -9,8 +9,8 @@ form{
     padding: 0.8rem;
 
     .primary-btn{
-        background-color: $secondary;
-        color: $primary;
+        @include backgroundColor;
+
         border-radius: 0.3125rem;
     }
 

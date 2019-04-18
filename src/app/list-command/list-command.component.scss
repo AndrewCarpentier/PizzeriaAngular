@@ -1,12 +1,11 @@
 @import '../../styles';
 
 div.row{
+    @include backgroundColor;
     height: 50%;
     width: 100%;
     top: 30%;
-    background-color: $primary;
     padding: 0.8rem;
-    color: $secondary;
     div.command{
         cursor: pointer;
     }

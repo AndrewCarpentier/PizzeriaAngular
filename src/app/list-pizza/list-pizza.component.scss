@@ -18,7 +18,7 @@
 {
     padding-top: 20px;
     font-weight: bolder;
-    color:$secondary;
+    color:$white;
 }
 
 .alert-success
@@ -35,17 +35,12 @@
     font-size: 18px;
 }
   
-@import '../../styles.scss';
-
-
-
 footer{
-    background-color: $primary;
+    @include backgroundColor;
     text-align: center;
-    color: $secondary;
     font-size: 1.875rem;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     cursor: pointer;
 }
@@ -55,9 +50,8 @@ footer{
 }
 
 .list-command{
-    background-color: $primary;
-    color: $secondary;
-    position: absolute;
+    @include backgroundColor;
+    position: fixed;
     padding: 0.5rem;
     right: 0;
     writing-mode: vertical-lr;
