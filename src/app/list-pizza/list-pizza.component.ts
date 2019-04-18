@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PizzaComponent } from '../pizza/pizza.component';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-list-pizza',
@@ -9,12 +10,26 @@ import { PizzaComponent } from '../pizza/pizza.component';
 export class ListPizzaComponent implements OnInit {
 
 
-  pizzas = [{id: 1, name :"4 fromages" , description:" description de la pizza fromages ", price:"5€", img:"https://www.dominos.fr/ManagedAssets/FR/product/P4FR/FR_P4FR_fr_hero_2142.png?v2008054620"},
-  {id: 2, name :"4 saisons" , description:" description de la pizza fromages ", price:"5€", img:"https://www.dominos.fr/ManagedAssets/FR/product/P4FR/FR_P4FR_fr_hero_2142.png?v2008054620"}]
+  pizzas = [{id: 1, name :"4 fromages" , price:5, img:"https://www.dominos.fr/ManagedAssets/FR/product/P4FR/FR_P4FR_fr_hero_2142.png?v2008054620", nb:1},
+  {id: 2, name :"4 saisons" , price:4, img:"http://familypizza92.fr/img/p/4/3/43-thickbox_default.jpg",nb:1},
+  {id: 3, name :"ananas" , price:6, img:"https://www.dominos.fr/ManagedAssets/FR/product/PHAW/FR_PHAW_fr_hero_2047.png?v458814297",nb:1},
+  {id: 4, name :"chevre miel" ,price:9, img:"http://www.pizza-flash27.fr/app_pizza_flash/image/cache/catalog/Pizza%20Fromages/pizzaCmiel-500x500.png",nb:1}]
   
+  displayAlert = false;
+
+  pizzaName;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  alertDisplay = (pizza)=>{
+    console.log(pizza)
+    this.pizzaName = pizza.name;
+    this.displayAlert = true;
+    setTimeout(() => {
+      this.displayAlert = false;
+    }, 1000);
   }
 
 }

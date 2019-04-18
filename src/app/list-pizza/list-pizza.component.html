@@ -1,7 +1,15 @@
+<div class="title"> <h1>Pizza management interface</h1></div>
+
+<div *ngIf="displayAlert">
+  <div class="alert alert-success" role="alert">
+   <p>Pizza {{pizzaName}} validée avec succès !</p>
+  </div>
+</div>
 <div class="card-deck">
   <div *ngFor="let pizza of pizzas" >
 
-    <app-pizza [pizzaIn]="pizza"></app-pizza>
+    <app-pizza [pizzaIn]="pizza" (alert)="alertDisplay($event)"></app-pizza>
   
   </div>
 </div>
+

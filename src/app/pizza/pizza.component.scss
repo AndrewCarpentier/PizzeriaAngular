@@ -1,0 +1,21 @@
+.card :hover
+{
+    cursor: pointer;
+}
+
+.card
+{
+    margin-top: 30px;
+    justify-content: center;
+    border: solid  rgb(241, 97, 71) 2px;
+}
+
+.card-title
+{
+    text-align: center;
+}
+
+.card-img-top
+{
+    padding:5px;
+}

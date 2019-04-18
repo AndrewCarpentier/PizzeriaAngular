@@ -1,0 +1,38 @@
+.card-deck
+{
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.title
+{
+    height: 80px;
+    width: 100%;
+    background-color: rgb(241, 97, 71);
+    text-align: center;
+   
+
+}
+
+.title h1
+{
+    padding-top: 20px;
+    font-weight: bolder;
+    color:white;
+    
+}
+
+.alert-success
+{
+    width:100%;
+    position: absolute;
+    z-index: 5;
+    height: 50px;
+}
+
+.alert-success p
+{
+    text-align: center;
+    font-size: 18px;
+  
+}
