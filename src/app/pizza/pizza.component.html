@@ -2,11 +2,17 @@
 
 
   <div *ngIf="displayHover && listPizza" class="add" >
-      <i class="fas fa-plus"></i>
+      <i class="fas fa-plus" ></i>
   </div>
   
+  <div *ngIf="!listPizza">
+      <i  class="fas fa-times"></i>
+  </div>
+
   <img class="card-img-top" width="150px" height="200" src={{pizzaIn.img}} alt={{pizzaIn.name}}>
+  
   <div class="card-body">
+     
     <h5 class="card-title">{{pizzaIn.name}}</h5>
   </div>
   
