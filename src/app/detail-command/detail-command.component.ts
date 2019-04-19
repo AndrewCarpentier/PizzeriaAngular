@@ -11,9 +11,12 @@ export class DetailCommandComponent implements OnInit {
 
   command;
 
-  constructor(private route: ActivatedRoute, private service : DataService) {
+  constructor(private route: ActivatedRoute, private service: DataService) {
+    this.service.commands = this.service.getCommands();
 
-   }
+    let id = this.route.snapshot.paramMap.get("id")
+    this.command = this.service.getCommandById(id);
+  }
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get("id")

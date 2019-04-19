@@ -13,7 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes : Routes = [
   {path: '', component: ListPizzaComponent},
-  {path: 'command/:id', component: DetailCommandComponent}
+  {path: 'command/:id', component: DetailCommandComponent},
+  {path: '**', component: ListPizzaComponent}
 ]
 
 @NgModule({

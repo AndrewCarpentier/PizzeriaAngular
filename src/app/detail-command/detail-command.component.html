@@ -1,10 +1,10 @@
-{{command.id}}
+<div *ngIf="command != undefined">
+  <div *ngFor="let pizza of command.pizzas">
+    <app-pizza [pizzaIn]="pizza" [listPizza]="false" [commandNumber]="1"></app-pizza>
+  </div>
 
-<div *ngFor="let pizza of command.pizzas">
-    <app-pizza [pizzaIn]="pizza"></app-pizza>
-</div>
-
-<div>
-  {{command.client.firstname}}
-  {{command.client.lastname}}
+  <div>
+    {{command.client.firstname}}
+    {{command.client.lastname}}
+  </div>
 </div>

@@ -7,7 +7,7 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
   animations: [
     trigger('openClose', [
       state('open', style({
-        width: '55%'
+        width: '50%'
       })),
       state('closed', style({
         width: '0px',

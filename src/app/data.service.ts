@@ -20,9 +20,19 @@ export class DataService {
 
     }
     if(!find){
-
       this.pizzasCommand.push({ ...pizza, nb: 1 });
     }
+  }
+
+  updatePizzaCommand = (numberCommand, pizzaId, nb)=>{
+    let indexCommand = this.commands.findIndex((command)=>{
+      return command.number == numberCommand;
+    });
+    let indexPizzas = this.commands[indexCommand].pizzas.findIndex((pizza)=>{
+      return pizza.id == pizzaId;
+    });
+    this.commands[indexCommand].pizzas[indexPizzas].nb = nb;
+    this.addCommand(this.commands)
   }
 
   endCommand = (client)=>{
@@ -30,6 +40,7 @@ export class DataService {
     this.commands.push(command);
     this.addCommand(this.commands);
     this.commandsSubject.next(this.commands);
+    this.pizzasCommand = [];
   }
 
   getCommandById = (id)=>{

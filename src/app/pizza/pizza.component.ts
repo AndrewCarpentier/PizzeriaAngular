@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,Output} from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { DataService } from '../data.service';
 import { EventEmitter } from '@angular/core';
 
@@ -10,33 +10,34 @@ import { EventEmitter } from '@angular/core';
 export class PizzaComponent implements OnInit {
 
 
-@Input() pizzaIn;
-@Output() alert = new EventEmitter<any>();
+  @Input() pizzaIn;
+  @Input() commandNumber;
+  @Input() listPizza = true;
+  @Output() alert = new EventEmitter<any>();
 
-displayHover = false;
+  displayHover = false;
 
-addHover(){
-  this.displayHover = true;
-}
+  addHover() {
+    this.displayHover = true;
+  }
 
-removeHover(){
-  this.displayHover = false;
-}
+  removeHover() {
+    this.displayHover = false;
+  }
 
-add()
-{
-  this.service.addPizzaCommand(this.pizzaIn);
-  this.alert.emit(this.pizzaIn);
+  add() {
+    this.service.addPizzaCommand(this.pizzaIn);
+    this.alert.emit(this.pizzaIn);
+  };
 
-};
-
-  constructor(private service : DataService)
-   { 
-
-
-   }
+  constructor(private service: DataService) {
+  }
 
   ngOnInit() {
+  }
+
+  update = (e)=>{
+    this.service.updatePizzaCommand(this.commandNumber, e.target.getAttribute('name'), e.target.value);
   }
 
 }

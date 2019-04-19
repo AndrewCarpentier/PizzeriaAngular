@@ -1,7 +1,7 @@
-<div class="card" style="width: 18rem;" (click)="add()" (mouseenter)="addHover()" (mouseleave)="removeHover()">
+<div class="card" style="width: 18rem;" (click)="listPizza ? add() : ''" (mouseenter)="addHover()" (mouseleave)="removeHover()">
 
 
-  <div *ngIf="displayHover" class="add" >
+  <div *ngIf="displayHover && listPizza" class="add" >
       <i class="fas fa-plus"></i>
   </div>
   
@@ -9,4 +9,6 @@
   <div class="card-body">
     <h5 class="card-title">{{pizzaIn.name}}</h5>
   </div>
+  
+  <input *ngIf="!listPizza" (change)="update($event)" name="{{pizzaIn.id}}" class="form-control nb" type="text" value="{{pizzaIn.nb}}">
 </div>
