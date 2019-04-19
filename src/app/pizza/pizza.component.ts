@@ -11,9 +11,8 @@ export class PizzaComponent implements OnInit {
 
 
 @Input() pizzaIn;
-@Output() PizzaOut : {id, name, description, price, img, nb};
-
 @Output() alert = new EventEmitter<any>();
+
 displayHover = false;
 
 addHover(){

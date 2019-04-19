@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-detail-command',
@@ -7,11 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailCommandComponent implements OnInit {
 
-  command = {id: 1, pizzas: [{id:1, name: 'test', description: 'test', price: '5', img: ''}], client: {firstname: 'prenom', lastname: 'nom'}}
-  
-  constructor() { }
+  command;
+
+  constructor(private route: ActivatedRoute, private service : DataService) {
+
+   }
 
   ngOnInit() {
+    let id = this.route.snapshot.paramMap.get("id")
+    this.command = this.service.getCommandById(id);
   }
 
 }

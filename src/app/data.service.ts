@@ -6,6 +6,7 @@ export class DataService {
 
   pizzasCommand = [];
   commands = [];
+  commandsSubject = new Subject<any>();
 
   constructor() { }
 
@@ -23,13 +24,20 @@ export class DataService {
       this.pizzasCommand.push({ ...pizza, nb: 1 });
     }
   }
-  
-  commandsSubject = new Subject<any>();
 
   endCommand = (client)=>{
     let command = {number : this.getLastCommandNumber() + 1, pizzas: this.pizzasCommand, client: client, payed: false };
     this.commands.push(command);
     this.addCommand(this.commands);
+    this.commandsSubject.next(this.commands);
+  }
+
+  getCommandById = (id)=>{
+    let index = this.commands.findIndex((command)=>{
+      return command.number == id;
+    });
+
+    return this.commands[index];
   }
 
   getLastCommandNumber = ()=>{

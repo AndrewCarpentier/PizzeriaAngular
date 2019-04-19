@@ -9,10 +9,11 @@ import { ValidCommandComponent } from './valid-command/valid-command.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { DataService } from './data.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes : Routes = [
   {path: '', component: ListPizzaComponent},
-  {path: 'command:id', component: DetailCommandComponent}
+  {path: 'command/:id', component: DetailCommandComponent}
 ]
 
 @NgModule({
@@ -29,6 +30,7 @@ const routes : Routes = [
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    BrowserAnimationsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

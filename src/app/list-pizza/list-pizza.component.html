@@ -8,26 +8,26 @@
   </div>
 </div>
 
-  <div class="card-deck" [ngClass]="validCommand || displayCommands ? 'opacity' : ''">
-    <div *ngFor="let pizza of pizzas">
+<div class="card-deck" [ngClass]="validCommand || displayCommands ? 'opacity' : ''">
+  <div *ngFor="let pizza of pizzas">
 
-      <app-pizza [pizzaIn]="pizza" (alert)="alertDisplay($event)"></app-pizza>
+    <app-pizza [pizzaIn]="pizza" (alert)="alertDisplay($event)"></app-pizza>
 
-    </div>
   </div>
+</div>
 
-  <div *ngIf="validCommand" class="pop-up container">
-    <app-valid-command (closePopUp)="validate()"></app-valid-command>
-  </div>
+<div *ngIf="validCommand" class="pop-up container">
+  <app-valid-command (closePopUp)="validate()"></app-valid-command>
+</div>
 
-  <div *ngIf="displayCommands" class="pop-up app-list-command">
-    <app-list-command (closePopUp)="display()"></app-list-command>
-  </div>
+<div [@openClose]="displayCommands? 'open' : 'closed'" class="pop-up app-list-command">
+  <app-list-command (closePopUp)="display()"></app-list-command>
+</div>
 
-  <div class="list-command"  [ngClass]="displayCommands ? 'list-command-click' : ''" (click)="display()">
-    Liste des commandes
-  </div>
+<div class="list-command" [ngClass]="displayCommands ? 'list-command-click' : ''" (click)="display()">
+  Liste des commandes
+</div>
 
-  <footer (click)="validate()">
-    Valider la commande
-  </footer>
+<footer (click)="validate()">
+  Valider la commande
+</footer>

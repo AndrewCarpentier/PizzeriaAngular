@@ -6,20 +6,12 @@ div.row{
     top: 30%;
     padding: 0.8rem;
     margin-left: 0;
+    height: 6.25rem;
+    font-size: 3.125rem;
 }
 
 .coupure{
     border-bottom: 1.5px solid $white;
     cursor: pointer;
 
-}
-
-.close{
-    float: none;
-    position: absolute;
-    right: 30px;
-
-    &:hover{
-        cursor: pointer;
-    }
 }

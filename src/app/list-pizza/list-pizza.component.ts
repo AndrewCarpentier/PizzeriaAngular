@@ -1,8 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { trigger, style, state, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-list-pizza',
+  animations: [
+    trigger('openClose', [
+      state('open', style({
+        width: '55%'
+      })),
+      state('closed', style({
+        width: '0px',
+      })),
+      transition('open=>closed', [
+        animate('1s')
+      ]),
+      transition('closed=>open', [
+        animate('1s')
+      ])
+    ])
+  ],
   templateUrl: './list-pizza.component.html',
   styleUrls: ['./list-pizza.component.scss']
 })

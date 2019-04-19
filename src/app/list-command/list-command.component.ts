@@ -16,7 +16,9 @@ export class ListCommandComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.service.commandsSubject.subscribe((newCommands)=>{
+      this.commands = newCommands;
+    })
   }
 
   close = ()=>{
