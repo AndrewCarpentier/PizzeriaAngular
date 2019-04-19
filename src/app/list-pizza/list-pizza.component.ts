@@ -35,12 +35,10 @@ export class ListPizzaComponent implements OnInit {
   {id: 7, name :"fruit de mer" ,price:8, img:"http://allopizza77.fr/172-large_default/fruits-de-mer.jpg"},
   {id: 8, name :"mergez" ,price:9, img:"https://www.dominos.fr/ManagedAssets/FR/product/PSME/FR_PSME_fr_hero_1850.png?v-1959240215"}
 
-
-
-
 ]
   
   displayAlert = false;
+  listPizza = true;
 
   pizzaName;
   validCommand = false;

@@ -1,10 +1,18 @@
-<div *ngIf="command != undefined">
+
+<div class="client">
+  <h1> {{command.client.firstname}}
+    {{command.client.lastname}}</h1>
+</div>
+
+
+<div class="card-deck">
+    
   <div *ngFor="let pizza of command.pizzas">
-    <app-pizza [pizzaIn]="pizza" [listPizza]="false" [commandNumber]="1"></app-pizza>
+  
+    
+    
+    <app-pizza [pizzaIn]="pizza" [listPizza]="false" [commandNumber]="1"> </app-pizza>
+  
   </div>
 
-  <div>
-    {{command.client.firstname}}
-    {{command.client.lastname}}
-  </div>
 </div>
