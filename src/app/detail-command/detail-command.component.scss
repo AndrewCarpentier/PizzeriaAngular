@@ -6,6 +6,10 @@
     justify-content: center;
     margin-top: 80px;
     margin-bottom: 200px;
+
+    @media screen and (max-width: 572px) {
+        margin-left: 22%;
+    }
 }
 
 i.fa-arrow-alt-circle-left{
