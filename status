@@ -1,0 +1,53 @@
+[33mcommit 0dfbae92bd921bc4a1ad0b43292d8628c939c574[m
+Author: AndrewCarpentier <andr3wcarpentier@gmail.com>
+Date:   Thu Apr 18 16:52:10 2019 +0200
+
+    ajout du css
+
+[33mcommit 3af072f52c6d7ab9e3fbbd9cd31c0b30a191bb2b[m
+Author: AndrewCarpentier <andr3wcarpentier@gmail.com>
+Date:   Thu Apr 18 16:28:36 2019 +0200
+
+    ajout css list pizza
+
+[33mcommit ea103d172608af082885bfd1ab61a5583e31ad88[m
+Author: AndrewCarpentier <andr3wcarpentier@gmail.com>
+Date:   Thu Apr 18 15:31:39 2019 +0200
+
+    fonction valider command affichage list commands + fixed pull conflict
+
+[33mcommit 4cc9b7b9b0f30ce7911224d4a5577e78f7f25583[m
+Author: AndrewCarpentier <andr3wcarpentier@gmail.com>
+Date:   Thu Apr 18 15:19:37 2019 +0200
+
+    retire console log
+
+[33mcommit 5af40080da0c4c29c99af3b976b9186988d3e017[m
+Author: selim <selimsahraoui@gmail.com>
+Date:   Thu Apr 18 15:13:04 2019 +0200
+
+    fonction ajouter pizza dans commands
+
+[33mcommit 45daed3a2bb03e795b6406c0878419db31a9acc8[m
+Author: selim <selimsahraoui@gmail.com>
+Date:   Thu Apr 18 11:37:08 2019 +0200
+
+    variables Service
+
+[33mcommit de4b9d87ea575e72b3224d3a7ab12064d59a12e4[m
+Author: AndrewCarpentier <andr3wcarpentier@gmail.com>
+Date:   Thu Apr 18 11:25:33 2019 +0200
+
+    creation page detail-command, list-command et valid-command
+
+[33mcommit 325f23cf2f180486f6c40795040381c1ffab1a54[m
+Author: selim <selimsahraoui@gmail.com>
+Date:   Thu Apr 18 11:07:49 2019 +0200
+
+    creation page list-Pizza et pizza
+
+[33mcommit 203727cd543f91a7e9d40d1863b6a43f31296350[m
+Author: AndrewCarpentier <andr3wcarpentier@gmail.com>
+Date:   Thu Apr 18 09:20:30 2019 +0200
+
+    initial commit
