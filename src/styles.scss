@@ -7,9 +7,13 @@ html {
     min-height: 100%;
     margin: 0;
     padding: 0;
+    //background: url("https://www.pizza-peperoni-castelsarrasin.com/ressources/images/115df476aadd.jpg");
+    background: url('https://media.giphy.com/media/3kzrzzQXUfI6bmUNf3/giphy.gif');
+    background-size: cover;
+
   }
 
-$primary : rgb(241, 97, 71);
+$primary : #4267b2;
 $secondary : gray;
 $white : white;
 $payed : #7cb342;

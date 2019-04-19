@@ -51,6 +51,7 @@ footer{
     position: fixed;
     bottom: 0;
     cursor: pointer;
+    z-index: 9999;
 }
 
 .opacity{
@@ -68,6 +69,7 @@ footer{
     text-orientation: initial;
     z-index: 9999;
     border: 2px solid transparent;
+    border-radius: 5px;
 }
 
 .list-command-click{
@@ -87,4 +89,5 @@ footer{
     z-index: 9999;
     opacity: 0.9;
     background-color: $primary;
+    top: 80px;
 }

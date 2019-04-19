@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../data.service';
 import { trigger, style, state, transition, animate } from '@angular/animations';
 
@@ -24,7 +24,6 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
   styleUrls: ['./list-pizza.component.scss']
 })
 export class ListPizzaComponent implements OnInit {
-
 
   pizzas = [{id: 1, name :"4 fromages" , price:5, img:"https://www.dominos.fr/ManagedAssets/FR/product/P4FR/FR_P4FR_fr_hero_2142.png?v2008054620", nb:1},
   {id: 2, name :"4 saisons" , price:4, img:"http://familypizza92.fr/img/p/4/3/43-thickbox_default.jpg",nb:1},

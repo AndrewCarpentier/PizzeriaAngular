@@ -1,4 +1,4 @@
-<div *ngFor="let command of commands | slice:0:7" class="row coupure" routerLink="/command/{{command.number}}">
+<div *ngFor="let command of commands | slice:0:10" class="row coupure" routerLink="/command/{{command.number}}">
 
   <div class="command col-md-8">
     {{command.number + ' - ' + command.client.lastname + ' ' + command.client.firstname | slice:0:30}}
