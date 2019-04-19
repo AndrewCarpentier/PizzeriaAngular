@@ -11,6 +11,10 @@
   color: $primary;
 }
 
+h6{
+  text-align: center;
+}
+
 .primary-btn{
   @include backgroundColor;
   border: 1.5px solid $white;

@@ -2,7 +2,7 @@
 
 
   <div *ngIf="displayHover && listPizza" class="add"  >
-      <i class="fas fa-plus"  ></i>
+      <i class="fas fa-plus"></i>
   </div>
   
   <img class="card-img-top" width="150px" height="200" src={{pizzaIn.img}} alt={{pizzaIn.name}}>
@@ -10,6 +10,7 @@
   <div class="card-body">
      
     <h5 class="card-title">{{pizzaIn.name}}</h5>
+    <h6 class="card-subtitle"> {{pizzaIn.price}}€ </h6>
   </div>
   <button class="btn primary-btn" *ngIf="!listPizza" (click)="delete($event)" name="{{pizzaIn.id}}">Delete</button>
   <input *ngIf="!listPizza" (change)="update($event)" name="{{pizzaIn.id}}" class="form-control nb" type="text" value="{{pizzaIn.nb}}">

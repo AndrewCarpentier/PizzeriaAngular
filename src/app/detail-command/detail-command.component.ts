@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../data.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class DetailCommandComponent implements OnInit {
   command;
   totalPrice = 0;
 
-  constructor(private route: ActivatedRoute, private service: DataService) {
+  constructor(private route: ActivatedRoute, private service: DataService, private router: Router) {
     this.service.commands = this.service.getCommands();
 
     let id = this.route.snapshot.paramMap.get("id")
@@ -31,6 +31,7 @@ export class DetailCommandComponent implements OnInit {
 
   buy = ()=>{
     this.service.buy(this.command.number);
+    this.router.navigate(["/"]);
   }
 
 }
