@@ -7,11 +7,20 @@ div.row{
     padding: 0.8rem;
     margin-left: 0;
     height: 6.25rem;
-    font-size: 3.125rem;
+    font-size: 1.5625rem;
+    padding: 1.875rem;
 }
 
 .coupure{
     border-bottom: 1.5px solid $white;
     cursor: pointer;
 
+}
+
+i{
+    position: absolute;
+    font-size: 50px;
+    right: 50%;
+    bottom: 5%;
+    opacity: 0.6;
 }

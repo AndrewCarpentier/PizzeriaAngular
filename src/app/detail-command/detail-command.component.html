@@ -2,17 +2,24 @@
 <div class="client">
   <h1> {{command.client.firstname}}
     {{command.client.lastname}}</h1>
-</div>
 
+    <i class="far fa-arrow-alt-circle-left" routerLink=""></i>
+</div>
 
 <div class="card-deck">
     
   <div *ngFor="let pizza of command.pizzas">
-  
     
-      
-    <app-pizza [pizzaIn]="pizza" [listPizza]="false" [commandNumber]="1"> </app-pizza>
+    <app-pizza [pizzaIn]="pizza" [listPizza]="false" commandNumber="{{command.number}}"> </app-pizza>
   
   </div>
 
 </div>
+
+<div class="totalPrice">
+  {{totalPrice}} €
+  <div class="payer" (click)="buy()">
+    Payer
+  </div>
+</div>
+

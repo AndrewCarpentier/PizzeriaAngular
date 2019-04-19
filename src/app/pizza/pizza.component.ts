@@ -40,4 +40,8 @@ export class PizzaComponent implements OnInit {
     this.service.updatePizzaCommand(this.commandNumber, e.target.getAttribute('name'), e.target.value);
   }
 
+  delete = (e)=>{
+    console.log(e.target.getAttribute('id'))
+      this.service.deletePizzaCommand(this.commandNumber, e.target.getAttribute('id'));
+  }
 }

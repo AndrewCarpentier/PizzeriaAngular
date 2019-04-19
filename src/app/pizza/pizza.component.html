@@ -1,20 +1,16 @@
 <div class="card" style="width: 18rem;" (click)="listPizza ? add() : ''" (mouseenter)="addHover()" (mouseleave)="removeHover()">
 
 
-  <div *ngIf="displayHover && listPizza" class="add" >
-      <i class="fas fa-plus" ></i>
+  <div *ngIf="displayHover && listPizza" class="add"  >
+      <i class="fas fa-plus"  ></i>
   </div>
   
-  <div *ngIf="!listPizza">
-      <i  class="fas fa-times"></i>
-  </div>
-
   <img class="card-img-top" width="150px" height="200" src={{pizzaIn.img}} alt={{pizzaIn.name}}>
   
   <div class="card-body">
      
     <h5 class="card-title">{{pizzaIn.name}}</h5>
   </div>
-  
+  <button class="btn primary-btn" *ngIf="!listPizza" (click)="delete($event)" name="{{pizzaIn.id}}">Delete</button>
   <input *ngIf="!listPizza" (change)="update($event)" name="{{pizzaIn.id}}" class="form-control nb" type="text" value="{{pizzaIn.nb}}">
 </div>

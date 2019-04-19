@@ -10,17 +10,27 @@ import { DataService } from '../data.service';
 export class DetailCommandComponent implements OnInit {
 
   command;
+  totalPrice = 0;
 
   constructor(private route: ActivatedRoute, private service: DataService) {
     this.service.commands = this.service.getCommands();
 
     let id = this.route.snapshot.paramMap.get("id")
     this.command = this.service.getCommandById(id);
+    this.totalPrice = this.service.commandPrice(this.command.number);
+    console.log(this.command.payed)
   }
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get("id")
     this.command = this.service.getCommandById(id);
+    this.service.commandPriceSubject.subscribe((newPrice)=>{
+      this.totalPrice = newPrice;
+    })
+  }
+
+  buy = ()=>{
+    this.service.buy(this.command.number);
   }
 
 }

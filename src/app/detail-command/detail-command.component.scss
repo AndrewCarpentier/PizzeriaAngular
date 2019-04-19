@@ -5,6 +5,18 @@
 {
     justify-content: center;
     margin-top: 80px;
+    margin-bottom: 200px;
+}
+
+i.fa-arrow-alt-circle-left{
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 14px;
+    color: $white;
+    width: 50px;
 }
 
 .client
@@ -19,6 +31,7 @@
         font-size: 22px;
         font-weight: bolder;
         padding: 27px;
+        cursor: default;
     }
 }
 
@@ -33,4 +46,22 @@ i
 .croix
 {
     right: 0;
+}
+
+.totalPrice{
+    @include backgroundColor;
+    position: fixed;
+    bottom: 0;
+    font-size: 1.875rem;
+    width: 100%;
+    text-align: center;
+    cursor: default;
+
+    .payer{
+        border-top: 1.5px solid $white;
+        cursor: pointer;
+        font-size: 2.5rem;
+        background-color: $white;
+        color: $primary;
+    }
 }

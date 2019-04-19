@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../data.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-command',
@@ -11,7 +12,7 @@ export class ListCommandComponent implements OnInit {
   commands;
   @Output() closePopUp = new EventEmitter<any>();
 
-  constructor(private service : DataService) { 
+  constructor(private service : DataService, private route : Router) { 
     this.commands = this.service.getCommands();
   }
 
@@ -19,6 +20,10 @@ export class ListCommandComponent implements OnInit {
     this.service.commandsSubject.subscribe((newCommands)=>{
       this.commands = newCommands;
     })
+  }
+
+  router = (e)=>{
+    this.route.navigate(["/command/" + e.target.value])
   }
 
   close = ()=>{

@@ -10,6 +10,13 @@
   border: solid $primary 2px;
 }
 
+.primary-btn{
+  @include backgroundColor;
+  border: 1.5px solid $white;
+  border-radius: 0.3125rem;
+  margin: 2px;
+}
+
 .card-title {
   text-align: center;
 }
@@ -32,10 +39,6 @@
     color: $primary;
     opacity: 0.8;
   }
-
-
-
-
 }
 
 i.fa-times {

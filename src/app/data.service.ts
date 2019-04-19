@@ -8,7 +8,13 @@ export class DataService {
   commands = [];
   commandsSubject = new Subject<any>();
 
+  commandPriceSubject = new Subject<any>();
+
   constructor() { }
+
+  updateCommandPrice = (numberCommand)=>{
+    this.commandPriceSubject.next(this.commandPrice(numberCommand));
+  }
 
   addPizzaCommand(pizza) {
     let find=false;
@@ -24,22 +30,59 @@ export class DataService {
     }
   }
 
-  updatePizzaCommand = (numberCommand, pizzaId, nb)=>{
-    let indexCommand = this.commands.findIndex((command)=>{
-      return command.number == numberCommand;
-    });
-    let indexPizzas = this.commands[indexCommand].pizzas.findIndex((pizza)=>{
+  commandPrice = (numberCommand)=>{
+    let price = 0;
+    let indexCommand = this.findIndexCommands(numberCommand);
+    for(let pizza of this.commands[indexCommand].pizzas){
+      price += (pizza.price * pizza.nb);
+    }
+    return price;
+  }
+
+  deletePizzaCommand = (commandNumber, pizzaId)=>{
+    let commandIndex = this.findIndexCommands(commandNumber);
+    let indexPizza = this.findIndexPizzasCommand(pizzaId, commandIndex);
+    this.commands[commandIndex].pizzas.splice(indexPizza, 1)
+    this.emitCommands();
+    this.commandPrice(commandNumber);
+    this.updateCommandPrice(commandNumber);
+  }
+
+  findIndexPizzasCommand = (pizzaId, indexCommand)=>{
+    return this.commands[indexCommand].pizzas.findIndex((pizza)=>{
       return pizza.id == pizzaId;
     });
+  }
+
+  emitCommands = ()=>{
+    this.addCommand(this.commands);
+    this.commandsSubject.next(this.commands);
+  }
+
+  updatePizzaCommand = (numberCommand, pizzaId, nb)=>{
+    let indexCommand = this.findIndexCommands(numberCommand);
+    let indexPizzas = this.findIndexPizzasCommand(pizzaId, indexCommand);
     this.commands[indexCommand].pizzas[indexPizzas].nb = nb;
-    this.addCommand(this.commands)
+    this.emitCommands();
+    this.updateCommandPrice(numberCommand);
+  }
+
+  findIndexCommands = (commandNumber)=>{
+    return this.commands.findIndex((command)=>{
+      return command.number == commandNumber;
+    })
+  }
+
+  buy = (commandNumber)=>{
+    let commandIndex = this.findIndexCommands(commandNumber);
+    this.commands[commandIndex].payed = true;
+    this.emitCommands();
   }
 
   endCommand = (client)=>{
     let command = {number : this.getLastCommandNumber() + 1, pizzas: this.pizzasCommand, client: client, payed: false };
     this.commands.push(command);
-    this.addCommand(this.commands);
-    this.commandsSubject.next(this.commands);
+    this.emitCommands();
     this.pizzasCommand = [];
   }
 
