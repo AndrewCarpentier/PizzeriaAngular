@@ -1,18 +1,15 @@
-<select class="form-control" (change)="router($event)">
-  <option value="">Choissisez la commande</option>
-  <option value="{{command.number}}" *ngFor="let command of commands | slice:0:7" class="row coupure">
+<div *ngFor="let command of commands | slice:0:7" class="row coupure" routerLink="/command/{{command.number}}">
 
-    <div class="command col-md-8">
-      {{command.number + ' - ' + command.client.lastname + ' ' + command.client.firstname | slice:0:30}}
-    </div>
+  <div class="command col-md-8">
+    {{command.number + ' - ' + command.client.lastname + ' ' + command.client.firstname | slice:0:30}}
+  </div>
 
-    <div class="col-md-4">
-      <div *ngIf="command.payed; else elseBlock">
-        [Payer]
-      </div>
-      <ng-template #elseBlock>
-        [Pas payer]
-      </ng-template>
+  <div class="col-md-4">
+    <div *ngIf="command.payed; else elseBlock">
+      Payer
     </div>
-  </option>
-</select>
+    <ng-template #elseBlock>
+      Pas payer
+    </ng-template>
+  </div>
+</div>

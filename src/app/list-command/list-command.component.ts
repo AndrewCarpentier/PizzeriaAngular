@@ -22,10 +22,6 @@ export class ListCommandComponent implements OnInit {
     })
   }
 
-  router = (e)=>{
-    this.route.navigate(["/command/" + e.target.value])
-  }
-
   close = ()=>{
     this.closePopUp.emit();
   }
