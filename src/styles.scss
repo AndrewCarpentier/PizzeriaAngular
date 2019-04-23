@@ -17,8 +17,7 @@ html {
 $primary : #4267b2;
 $secondary : gray;
 $white : white;
-$payed : #7cb342;
-$notPayed : #ef5350;
+
 
 @mixin backgroundColor {
     background-color: $primary;
